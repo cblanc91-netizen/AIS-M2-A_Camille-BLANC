@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="pannellum.css"/>
+  <script src="pannellum.js"></script>
+  <style>html, body, #panorama { width:100%; height:100vh; margin:0; }</style>
+</head>
+<body>
+  <div id="panorama"></div>
+  <script>
+    pannellum.viewer('panorama', {
+      default: {
+        firstScene: 'scene1',
+        sceneFadeDuration: 1000
+      },
+      scenes: {
+        scene1: {
+          title: 'Entrée',
+          panorama: 'Panorama1.png',
+          autoLoad: true,
+	  hotSpotDebug: true,
+          hotSpots: [
+            {
+              pitch: -10,
+              yaw: 0,
+              type: 'scene',
+              sceneId: 'scene2',
+              text: 'Accueil'
+            },
+            {
+              pitch: -10,
+              yaw: -48,
+              type: 'scene',
+              sceneId: 'scene3',
+              text: 'Salle à manger'
+            }
+          ]
+        },
+        scene2: {
+          title: 'Accueil',
+          panorama: 'Panorama2.png',
+          autoLoad: true,
+	  hotSpotDebug: true,
+          hotSpots: [
+            {
+              pitch: -10,
+              yaw: -70,
+              type: 'scene',
+              sceneId: 'scene1',
+              text: 'Entrée'
+            }
+          ]
+        },
+        scene3: {
+          title: 'Salle à manger',
+          panorama: 'Panorama3.png',
+          autoLoad: true,
+	  hotSpotDebug: true,
+          hotSpots: [
+            {
+              pitch: -6,
+              yaw: 14,
+              type: 'scene',
+              sceneId: 'scene1',
+              text: 'Inside'
+            }
+          ]
+        }
+      }
+    });
+  </script>
+</body>
+</html>
